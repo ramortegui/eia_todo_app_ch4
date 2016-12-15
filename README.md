@@ -3,10 +3,10 @@
 Simple todo app, following Elixir in action. Ch. 4
 
 s = SimpleTodo.new
-s = SimpleTodo.add_entry(s,{2016,01,01},"test1")
-s = SimpleTodo.add_entry(s,{2016,01,01},"test2")
-s = SimpleTodo.add_entry(s,{2016,01,01},"test3")
-s = SimpleTodo.add_entry(s,{2016,01,02},"test4")
+s = SimpleTodo.add_entry(s,%{ date: {2016,01,01}, title: "test1"})
+s = SimpleTodo.add_entry(s,%{ date: {2016,01,01}, title: "test2"})
+s = SimpleTodo.add_entry(s,%{ date: {2016,01,01}, title: "test3"})
+s = SimpleTodo.add_entry(s,%{ date: {2016,01,02}, title: "test4"})
 >%{{2016, 1, 1} => ["test3", "test2", "test1"], {2016, 1, 2} => ["test4"]}
 
 
