@@ -2,16 +2,14 @@
 
 Simple todo app, following Elixir in action. Ch. 4
 
-s = SimpleTodo.new
-s = SimpleTodo.add_entry(s,%{ date: {2016,01,01}, title: "test1"})
-s = SimpleTodo.add_entry(s,%{ date: {2016,01,01}, title: "test2"})
-s = SimpleTodo.add_entry(s,%{ date: {2016,01,01}, title: "test3"})
-s = SimpleTodo.add_entry(s,%{ date: {2016,01,02}, title: "test4"})
->%{{2016, 1, 1} => ["test3", "test2", "test1"], {2016, 1, 2} => ["test4"]}
+td  = TodoStruct.new
+td = TodoStruct.add_entry(td,%{date: {2016,12,01}, title: "movies1" } )
+td = TodoStruct.add_entry(td,%{date: {2016,12,01}, title: "movies2" } )
+td = TodoStruct.add_entry(td,%{date: {2016,12,02}, title: "movies3" } )
+td = TodoStruct.add_entry(td,%{date: {2016,12,02}, title: "movies4" } )
 
+TodoStruct.entries(td,{2016,12,1})
 
-SimpleTodo.entries(s,{2016,1,1}) |> Enum.each(&IO.puts(&1))
-test3
-test2
-test1
-:ok
+[%{date: {2016, 12, 1}, id: 1, title: "movies1"}
+ %{date: {2016, 12, 1}, id: 2, title: "movies2"}]
+
